@@ -6,8 +6,8 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "rashmina-terraform-state" # Replace with your bucket name
-    key    = "state/terraform.tfstate"
+    bucket = "dls-automation-test-bucket" # Replace with your bucket name
+    key    = "state/s3.tfstate"
     region = "us-east-1"
   }
 }
