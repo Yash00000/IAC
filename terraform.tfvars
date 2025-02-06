@@ -1,3 +1,3 @@
 bucket_name = "home-test-bucket"
-region      = "us-east-1"
+region      = "ap-south-1"
 acl = "private"
