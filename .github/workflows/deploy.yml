@@ -10,9 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the code from the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      #  Configure AWS Credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -20,16 +22,24 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      # Set up Terraform
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: '1.5.0' 
+          terraform_version: '1.5.0'
 
+      # Initialize Terraform
       - name: Terraform Init
         run: terraform init
-        
+
+      # Format Terraform code
       - name: Terraform Format
         run: terraform fmt
 
+      # Validate Terraform configuration
+      - name: Terraform Validate
+        run: terraform validate
+
+      # Terraform execution plan
       - name: Terraform Plan
         run: terraform plan
