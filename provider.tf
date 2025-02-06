@@ -8,7 +8,7 @@ terraform {
   backend "s3" {
     bucket = "dls-automation-test-bucket"
     key    = "state/s3.tfstate"
-    region = var.region
+    region = "ap-south-1"
   }
 }
 provider "aws" {
