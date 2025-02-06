@@ -17,21 +17,3 @@ variable "deletion_window_in_days" {
   description = "The KMS Key deletion windows in days"
   type        = string
 }
-
-variable "tfstate_file_bucket" {
-  description = "The Bucket to store tf state file"
-  type        = string
-}
-
-
-variable "tfstate_key" {
-  description = "The Object path in bucket to store the tf state file"
-  type        = string
-}
-
-
-
-variable "region" {
-  description = "The tf state bucket region"
-  type        = string
-}
